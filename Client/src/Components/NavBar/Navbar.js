@@ -1,8 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "./images/logo.png";
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
+  const user = localStorage.getItem("loggedInUser");
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser"); // Remove user session
+    navigate("/login"); // Redirect to login page
+  };
+
   return (
     <div className="navbar-container">
       <div>
@@ -28,6 +36,11 @@ const Navbar = (props) => {
         </ul>
       </div>
       <div>
+        {user && (
+          <button className="Navbar-button" onClick={handleLogout}>
+            Logout
+          </button>
+        )}
         <Link to="/services">
           <button className="Navbar-button">Give a Pet</button>
         </Link>

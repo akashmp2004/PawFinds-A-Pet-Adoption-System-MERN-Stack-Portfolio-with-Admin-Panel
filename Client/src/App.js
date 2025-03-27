@@ -8,7 +8,12 @@ import Contact from "./Components/Contact/Contact";
 import Pets from "./Components/Pets/Pets";
 import AdoptForm from "./Components/AdoptForm/AdoptForm";
 import AdminLogin from "./Components/AdminPanel/AdminLogin";
+import Wishlist1 from "./Components/Wishlist/Wishlist1";
+import Wishlist2 from "./Components/Wishlist/Wishlist2";
 import "./App.css";
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
+
 
 const Layout = ({ children }) => (
   <>
@@ -22,50 +27,23 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <Layout>
               <Home description="Ensure you are fully prepared to provide proper care and attention to your pet before welcoming them into your home." />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/services" 
-          element={
-            <Layout>
-              <Services />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/contact" 
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/pets" 
-          element={
-            <Layout>
-              <Pets />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/adopt-form" 
-          element={
-            <Layout>
-              <AdoptForm />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/admin" 
-          element={<AdminLogin />} 
-        />
+        <Route path="/services" element={<Layout><Services /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/pets" element={<Layout><Pets /></Layout>} />
+        <Route path="/adopt-form" element={<Layout><AdoptForm /></Layout>} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/wishlist1" element={<Layout><Wishlist1 /></Layout>} />
+        <Route path="/wishlist2" element={<Layout><Wishlist2 /></Layout>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );

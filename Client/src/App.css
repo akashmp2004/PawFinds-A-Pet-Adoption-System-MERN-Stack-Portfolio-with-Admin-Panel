@@ -141,6 +141,7 @@
     color: var(--white);
     box-shadow: 1.5px 1.5px 3px var(--orange);
     font-family: 'Preahvihear', sans-serif;
+    margin-bottom: 10px;
 }
 
 .Home-button:hover {
@@ -392,6 +393,7 @@
 }
 
 .Navbar-button {
+    margin-right: 10px;
     border: 2px var(--orange) solid;
     height: 42px;
     width: 105px;
@@ -1553,3 +1555,38 @@ body {
     margin-right: 4px;
     transition: all 0.3s ease;
 }
+.wishlist-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .wishlist-button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .wishlist-button:hover {
+    background-color: #e68900;
+  }
+  
+  .remove-wishlist-btn {
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .remove-wishlist-btn:hover {
+    background-color: darkred;
+  }
+  

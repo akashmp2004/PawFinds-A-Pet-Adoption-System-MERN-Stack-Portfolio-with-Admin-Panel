@@ -2,34 +2,49 @@ import React from "react";
 import girlHoldingADog from "./images/girlHoldingADog.png";
 import homepageDog from "./images/homepageDog.png";
 import footPrint from "./images/footPrint.png";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const HomeLandingContainer = (props) => {
+const HomeLandingContainer = ({ description, handleWishlistClick }) => {  // ✅ Receiving handleWishlistClick as a prop
+  const navigate = useNavigate();
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
   return (
     <div className="home-container">
       <div className="homeContainer-left">
         <div>
           <p className="home-title">
             <div className="home-titlePlusPng">
-            <p>Your Pets </p><img src={homepageDog} alt="Dog sitting"/>
+              <p>Your Pets </p>
+              <img src={homepageDog} alt="Dog sitting" />
             </div>
             Are Our
             <br />
             Priority
           </p>
-          <p className="home-second-para">
-            {props.description}
-          </p>
+          <p className="home-second-para">{description}</p>
         </div>
         <div className="adopt-btn">
-          <Link to='./pets'><button className="Home-button" onClick={scrollToTop}><p>Adopt a Pet</p><img src={footPrint} alt="footprint" /></button></Link>
+          <Link to="./pets">
+            <button className="Home-button" onClick={scrollToTop}>
+              <p>Adopt a Pet</p>
+              <img src={footPrint} alt="footprint" />
+            </button>
+          </Link>
+        </div>
+
+        {/* ✅ Using the handleWishlistClick prop properly */}
+        <div className="wishlist-button-container">
+          <button className="wishlist-button" onClick={handleWishlistClick}>
+            My Wishlist
+          </button>
         </div>
       </div>
+
       <div className="homeContainer-right">
-        <img src={girlHoldingADog} alt='Girl holding a Dog'/>
+        <img src={girlHoldingADog} alt="Girl holding a Dog" />
       </div>
     </div>
   );
